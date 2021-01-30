@@ -1,0 +1,3 @@
+PyQt5 >= 5.15.2
+smartcard >= 0.2
+pyscard >= 2.0

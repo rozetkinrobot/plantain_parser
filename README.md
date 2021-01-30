@@ -5,7 +5,7 @@ It's a little GUI app for parse Plaintain (podorozhnik) card dumps
 ## Install
 
 ```shell
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Usage

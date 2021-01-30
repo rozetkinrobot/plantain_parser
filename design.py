@@ -38,10 +38,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.file_name_view = QtWidgets.QTextEdit(self.groupBox_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.file_name_view.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.file_name_view.sizePolicy().hasHeightForWidth())
         self.file_name_view.setSizePolicy(sizePolicy)
         self.file_name_view.setMinimumSize(QtCore.QSize(300, 30))
         self.file_name_view.setMaximumSize(QtCore.QSize(1920, 30))
@@ -63,22 +65,27 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.creation_date_view = QtWidgets.QTextEdit(self.groupBox_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.creation_date_view.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.creation_date_view.sizePolicy().hasHeightForWidth())
         self.creation_date_view.setSizePolicy(sizePolicy)
         self.creation_date_view.setMaximumSize(QtCore.QSize(400, 30))
         self.creation_date_view.setReadOnly(True)
         self.creation_date_view.setObjectName("creation_date_view")
         self.horizontalLayout_2.addWidget(self.creation_date_view)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem)
         self.creation_date_view_2 = QtWidgets.QTextEdit(self.groupBox_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.creation_date_view_2.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.creation_date_view_2.sizePolicy().hasHeightForWidth())
         self.creation_date_view_2.setSizePolicy(sizePolicy)
         self.creation_date_view_2.setMaximumSize(QtCore.QSize(400, 30))
         self.creation_date_view_2.setReadOnly(True)
@@ -90,7 +97,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.dumpButton)
         self.verticalLayout_10.addLayout(self.horizontalLayout_2)
         self.verticalLayout.addWidget(self.groupBox_2)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem1 = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem1)
         self.groupBox_3 = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBox_3.setObjectName("groupBox_3")
@@ -120,10 +128,12 @@ class Ui_MainWindow(object):
         self.ekp_num_label.setObjectName("ekp_num_label")
         self.verticalLayout_7.addWidget(self.ekp_num_label)
         self.ekp_num_view = QtWidgets.QTextEdit(self.groupBox_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.ekp_num_view.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.ekp_num_view.sizePolicy().hasHeightForWidth())
         self.ekp_num_view.setSizePolicy(sizePolicy)
         self.ekp_num_view.setMinimumSize(QtCore.QSize(300, 30))
         self.ekp_num_view.setMaximumSize(QtCore.QSize(1920, 30))
@@ -141,10 +151,12 @@ class Ui_MainWindow(object):
         self.card_num_label.setObjectName("card_num_label")
         self.verticalLayout_8.addWidget(self.card_num_label)
         self.card_num_view = QtWidgets.QTextEdit(self.groupBox_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.card_num_view.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.card_num_view.sizePolicy().hasHeightForWidth())
         self.card_num_view.setSizePolicy(sizePolicy)
         self.card_num_view.setMinimumSize(QtCore.QSize(300, 30))
         self.card_num_view.setMaximumSize(QtCore.QSize(1920, 30))
@@ -176,10 +188,12 @@ class Ui_MainWindow(object):
         self.card_type_label.setObjectName("card_type_label")
         self.verticalLayout_2.addWidget(self.card_type_label)
         self.card_type_view = QtWidgets.QTextEdit(self.groupBox_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.card_type_view.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.card_type_view.sizePolicy().hasHeightForWidth())
         self.card_type_view.setSizePolicy(sizePolicy)
         self.card_type_view.setMinimumSize(QtCore.QSize(300, 30))
         self.card_type_view.setMaximumSize(QtCore.QSize(1920, 30))
@@ -188,9 +202,11 @@ class Ui_MainWindow(object):
         self.card_type_view.setObjectName("card_type_view")
         self.verticalLayout_2.addWidget(self.card_type_view)
         self.gridLayout.addLayout(self.verticalLayout_2, 0, 0, 1, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem2, 1, 1, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem3, 2, 1, 1, 1)
         self.verticalLayout_6 = QtWidgets.QVBoxLayout()
         self.verticalLayout_6.setObjectName("verticalLayout_6")
@@ -208,7 +224,8 @@ class Ui_MainWindow(object):
         self.passport_view.setObjectName("passport_view")
         self.verticalLayout_6.addWidget(self.passport_view)
         self.gridLayout.addLayout(self.verticalLayout_6, 2, 2, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem4, 0, 1, 1, 1)
         self.verticalLayout_11 = QtWidgets.QVBoxLayout()
         self.verticalLayout_11.setObjectName("verticalLayout_11")
@@ -226,7 +243,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.addWidget(self.last_day_view)
         self.gridLayout.addLayout(self.verticalLayout_11, 3, 2, 1, 1)
         self.verticalLayout.addWidget(self.groupBox_3)
-        spacerItem5 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem5 = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem5)
         self.parse_button = QtWidgets.QPushButton(self.centralwidget)
         self.parse_button.setEnabled(True)
@@ -239,78 +257,92 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Plaintain Parser"))
-        self.groupBox_2.setTitle(_translate("MainWindow", "Данные дампа                                                              "))
+        MainWindow.setWindowTitle(_translate(
+            "MainWindow", "Plantain Parser by rozetkin"))
+        self.groupBox_2.setTitle(_translate(
+            "MainWindow", "Данные дампа                                                              "))
         self.file_name_label.setText(_translate("MainWindow", "Имя файла"))
         self.file_name_view.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.file_name_view.setPlaceholderText(_translate("MainWindow", "Тут будет имя фала"))
+                                               "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                               "p, li { white-space: pre-wrap; }\n"
+                                               "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                               "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.file_name_view.setPlaceholderText(
+            _translate("MainWindow", "Тут будет имя фала"))
         self.openButton.setText(_translate("MainWindow", "+"))
-        self.creation_date_label.setText(_translate("MainWindow", "Дата создания"))
+        self.creation_date_label.setText(
+            _translate("MainWindow", "Дата создания"))
         self.creation_date_view.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.creation_date_view.setPlaceholderText(_translate("MainWindow", "Тут будет дата создания дампа"))
+                                                   "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                   "p, li { white-space: pre-wrap; }\n"
+                                                   "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                                   "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.creation_date_view.setPlaceholderText(
+            _translate("MainWindow", "Тут будет дата создания дампа"))
         self.creation_date_view_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.creation_date_view_2.setPlaceholderText(_translate("MainWindow", "Тут будет информация по дампу"))
+                                                     "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                     "p, li { white-space: pre-wrap; }\n"
+                                                     "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.creation_date_view_2.setPlaceholderText(
+            _translate("MainWindow", "Тут будет информация по дампу"))
         self.dumpButton.setText(_translate("MainWindow", "Создать дамп"))
         self.groupBox_3.setTitle(_translate("MainWindow", "Данные карты"))
         self.balance_label.setText(_translate("MainWindow", "Баланс"))
         self.balance_view.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.balance_view.setPlaceholderText(_translate("MainWindow", "Тут будет баланс карты"))
+                                             "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                             "p, li { white-space: pre-wrap; }\n"
+                                             "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                             "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.balance_view.setPlaceholderText(
+            _translate("MainWindow", "Тут будет баланс карты"))
         self.ekp_num_label.setText(_translate("MainWindow", "Номер EKП"))
         self.ekp_num_view.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.ekp_num_view.setPlaceholderText(_translate("MainWindow", "Тут будет номер ЕКП"))
+                                             "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                             "p, li { white-space: pre-wrap; }\n"
+                                             "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                             "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.ekp_num_view.setPlaceholderText(
+            _translate("MainWindow", "Тут будет номер ЕКП"))
         self.card_num_label.setText(_translate("MainWindow", "Номер Карты"))
         self.card_num_view.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.card_num_view.setPlaceholderText(_translate("MainWindow", "Тут будет номер ЕКП"))
+                                              "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                              "p, li { white-space: pre-wrap; }\n"
+                                              "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                              "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.card_num_view.setPlaceholderText(
+            _translate("MainWindow", "Тут будет номер ЕКП"))
         self.fio_label.setText(_translate("MainWindow", "ФИО"))
         self.fio_view.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.fio_view.setPlaceholderText(_translate("MainWindow", "Тут будет ФИО владельца карты"))
+                                         "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                         "p, li { white-space: pre-wrap; }\n"
+                                         "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                         "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.fio_view.setPlaceholderText(_translate(
+            "MainWindow", "Тут будет ФИО владельца карты"))
         self.card_type_label.setText(_translate("MainWindow", "Тип карты"))
         self.card_type_view.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.card_type_view.setPlaceholderText(_translate("MainWindow", "Тут будет тип карты"))
+                                               "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                               "p, li { white-space: pre-wrap; }\n"
+                                               "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                               "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.card_type_view.setPlaceholderText(
+            _translate("MainWindow", "Тут будет тип карты"))
         self.passport_label.setText(_translate("MainWindow", "Паспорт"))
         self.passport_view.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.passport_view.setPlaceholderText(_translate("MainWindow", "Тут будут серия и номер паспорта владельца карты"))
-        self.last_day_label.setText(_translate("MainWindow", "Дата окончания действия"))
+                                              "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                              "p, li { white-space: pre-wrap; }\n"
+                                              "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                              "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.passport_view.setPlaceholderText(_translate(
+            "MainWindow", "Тут будут серия и номер паспорта владельца карты"))
+        self.last_day_label.setText(_translate(
+            "MainWindow", "Дата окончания действия"))
         self.last_day_view.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.last_day_view.setPlaceholderText(_translate("MainWindow", "Тут будет дата окончания действия проездного"))
+                                              "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                              "p, li { white-space: pre-wrap; }\n"
+                                              "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                              "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.last_day_view.setPlaceholderText(_translate(
+            "MainWindow", "Тут будет дата окончания действия проездного"))
         self.parse_button.setText(_translate("MainWindow", "Спарсить данные!"))

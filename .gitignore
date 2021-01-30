@@ -132,3 +132,4 @@ keys.txt
 nfctool.py
 .vscode/
 .dist/
+*.bin

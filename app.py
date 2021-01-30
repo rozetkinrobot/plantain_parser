@@ -76,8 +76,8 @@ class Card:
 
         return num
 
-    def get_balance(self):  # 4 sec, 0 blk, 0-2 bytes
-        return int.from_bytes(self.get_data(4, 0, 0, 2), "little")//100
+    def get_balance(self):  # 4 sec, 0 blk, 0-3 bytes
+        return int.from_bytes(self.get_data(4, 0, 0, 3), "little")//100
 
     def get_ekp_num(self):  # 32 sec, 0 blk, 1-8 bytes (128 blk)
         print(self.get_data(32, 0, 1, 8))
@@ -127,7 +127,7 @@ class Card:
         pass  # TODO
 
 
-class PlaintainParserApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
+class PlantainParserApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.Card = None
@@ -263,7 +263,7 @@ class PlaintainParserApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
-    window = PlaintainParserApp()
+    window = PlantainParserApp()
     window.show()
     app.exec_()
 

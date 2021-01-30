@@ -148,6 +148,7 @@ class PlaintainParserApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         self.fio_view.setPlainText("")
         self.balance_view.setPlainText("")
         self.passport_view.setPlainText("")
+        self.last_day_view.setPlainText("")
 
     def create_dump(self) -> bool:
         try:
@@ -206,6 +207,7 @@ class PlaintainParserApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
             return False
 
     def parse_dump(self, dump=None):
+        self.clean_card_fields()
         if not dump:
             p_dump_filename = self.file_name_view.toPlainText()
             print(p_dump_filename)
@@ -247,6 +249,8 @@ class PlaintainParserApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         if "Подорожник" not in card_type:
             passport_num = str(self.Card.get_passport())
             self.passport_view.setPlainText(passport_num)
+            last_day = str(self.Card.get_last_day())
+            self.last_day_view.setPlainText(last_day)
 
         return True
 

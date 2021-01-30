@@ -1,4 +1,4 @@
-# Plaintain parser
+# Plantain parser
 
 It's a little GUI app for parse Plantain (podorozhnik) card dumps
 

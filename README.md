@@ -1,6 +1,6 @@
 # Plaintain parser
 
-It's a little GUI app for parse Plaintain (podorozhnik) card dumps
+It's a little GUI app for parse Plantain (podorozhnik) card dumps
 
 ## Install
 

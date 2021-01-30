@@ -1,31 +1,32 @@
 import os
 import sys
 from PyQt5 import QtWidgets
-import argparse
 from datetime import datetime
-import struct
+from time import sleep
+from smartcard.Exceptions import NoCardException, CardConnectionException
 
 import design
+from acr122ulib import *
 
 
-def createParser():
-    parser = argparse.ArgumentParser(
-        prog="card_dump_decode", description="This is a small programm for parse Podorozhnik and EKP cards")
-    parser.add_argument(
-        '-f', '--file', help="dump file to parse", required=True)
-    parser.add_argument('-o', '--output', help="file to write result")
-    # parser.add_argument('-h', '--help')
-
-    return parser
+keys = []
 
 
 class Card:
-    def __init__(self, dump):
+    def __init__(self, dump, uid=None):
         self._dump = dump
+        if uid:
+            self._uid = uid.encode()
+        else:
+            self._uid = None
 
     @property
     def dump(self):
         return self._dump
+
+    @property
+    def uid(self):
+        return self._uid
 
     def verify_dump(self):
         un_dump = self.dump
@@ -37,7 +38,10 @@ class Card:
             return False
 
     def get_uid(self):  # sec 0, blk 0, 0-7 bytes
-        return self.get_data(0, 0, 0, 7)
+        if self.uid == None:
+            return self.get_data(0, 0, 0, 7)
+        else:
+            return self.uid
 
     def _get_addr(self, sec: int, blk: int, offset: int):
         return sec * 16 * 4 + blk * 16 + offset
@@ -75,8 +79,9 @@ class Card:
     def get_balance(self):  # 4 sec, 0 blk, 0-2 bytes
         return int.from_bytes(self.get_data(4, 0, 0, 2), "little")//100
 
-    def get_ekp_num(self):  # 32 sec, 0 blk, 0-7 bytes (128 blk)
-        return int.from_bytes(self.get_data(32, 0, 0, 7), "big")
+    def get_ekp_num(self):  # 32 sec, 0 blk, 1-8 bytes (128 blk)
+        print(self.get_data(32, 0, 1, 8))
+        return int.from_bytes(self.get_data(32, 0, 1, 8), "big")
 
     def get_last_day(self):  # 8 sec, 0 blk, 10-13 bytes (32 blk)
         b_date = self.get_data(8, 0, 10, 13)
@@ -129,12 +134,14 @@ class PlaintainParserApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         self.setupUi(self)
         self.openButton.clicked.connect(self.select_dump)
         self.parse_button.clicked.connect(self.parse_dump)
+        self.dumpButton.setEnabled(False)
+        self.dumpButton.clicked.connect(self.create_dump)
 
     def display_error(self, error_message: str) -> None:
         self.error_dialog = QtWidgets.QErrorMessage()
         self.error_dialog.showMessage(error_message)
 
-    def clean_card_fields(self):
+    def clean_card_fields(self) -> None:
         self.card_type_view.setPlainText("")
         self.card_num_view.setPlainText("")
         self.ekp_num_view.setPlainText("")
@@ -142,19 +149,77 @@ class PlaintainParserApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         self.balance_view.setPlainText("")
         self.passport_view.setPlainText("")
 
-    def parse_dump(self):
-        p_dump_filename = self.file_name_view.toPlainText()
+    def create_dump(self) -> bool:
         try:
-            with open(p_dump_filename, "rb") as p_dump_file:
-                self.Card = Card(p_dump_file.read())
-                if not self.Card.verify_dump():
-                    self.Card = None
-                    return self.display_error('Файл не является валидным дампом!')
-                self.creation_date_view.setPlainText(datetime.fromtimestamp(
-                    os.path.getmtime(p_dump_filename[0])).strftime('%Y-%m-%d %H:%M:%S'))
-                self.parse_button.setEnabled(True)
+            with open("keys.txt", "r") as keyfile:
+                for line in keyfile.readlines():
+                    if line.strip() not in keys:
+                        keys.append(line.strip())
         except FileNotFoundError:
-            return self.display_error('Файл не найден!')
+            self.display_error("Файл ключей не найден!")
+            return False
+        readers = search_readers()
+        print(readers)
+        if len(readers) == 0:
+            self.display_error("Не найдено ни одного ридера!")
+            return None
+        connection = None
+        i = 0
+        while connection == None:
+            print(f"Connection attempt # {i}")
+            connection = create_connection(readers[0])
+            print(connection)
+            sleep(0.5)
+            i += 1
+
+        if connection == False:
+            self.display_error("Ошибка соединения!")
+            return None
+        try:
+            print("1")
+            uid = getuid(connection)
+            print("2")
+            info = getinfo(connection)
+            print("3")
+            if "MIFARE" not in info["Name"]:
+                return None
+            if "1K" in info["Name"]:
+                size = 1024
+            else:
+                size = 4096
+            dump = b""
+            for i in range(16):
+                print(f"Reading sector {i}")
+                dump1 = False
+                for key in keys:
+                    print(f"    attempt to auth with key {key}")
+                    dump1 = read_sector_with_key(i, key)
+                    if dump1:
+                        break
+                if not dump1:
+                    self.display_error(f"No key for sector {i}!")
+                    return None
+                dump += dump1
+            self.Card = Card(dump, uid)
+            return self.parse_dump(dump=dump)
+        except NoCardException:
+            return False
+
+    def parse_dump(self, dump=None):
+        if not dump:
+            p_dump_filename = self.file_name_view.toPlainText()
+            print(p_dump_filename)
+            try:
+                with open(p_dump_filename, "rb") as p_dump_file:
+                    self.Card = Card(p_dump_file.read())
+                    if not self.Card.verify_dump():
+                        self.Card = None
+                        return self.display_error('Файл не является валидным дампом!')
+                    self.creation_date_view.setPlainText(datetime.fromtimestamp(
+                        os.path.getmtime(p_dump_filename)).strftime('%Y-%m-%d %H:%M:%S'))
+                    self.parse_button.setEnabled(True)
+            except FileNotFoundError as e:
+                return self.display_error('Файл не найден!\n' + str(p_dump_filename) + "\n" + str(e))
 
         if self.Card is None:
             self.display_error("Файл дампа не выбран")
@@ -188,6 +253,7 @@ class PlaintainParserApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
     def select_dump(self) -> bool:
         p_dump_filename = QtWidgets.QFileDialog.getOpenFileName(
             self, "Выберите файл дампа")
+        print(type(p_dump_filename), p_dump_filename)
         self.file_name_view.setPlainText(p_dump_filename[0])
 
 

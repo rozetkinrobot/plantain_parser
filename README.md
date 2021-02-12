@@ -1,6 +1,6 @@
 # Plantain parser
 
-It's a little GUI app for parse Plantain (podorozhnik) card dumps
+It's a little GUI app for parsing Plantain (podorozhnik) card dumps
 
 ## Install
 
@@ -10,11 +10,11 @@ pip install -r requirements.txt
 
 ## Usage
 
-Just launch app.py and select dump, witch created by proxmark3
+Just launch app.py and select the dump created by proxmark3
 
 
 ## TODO
 
-- Implement creating dumps directly from the application with ACR122U
+- Implement dumping directly from the app with ACR122U
 - Refactor design
 - Add English language
